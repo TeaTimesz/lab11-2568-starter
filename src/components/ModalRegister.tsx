@@ -1,4 +1,4 @@
-import { useState, type HTMLInputAutoCompleteAttribute } from "react";
+import { useState } from "react";
 export default function ModalRegister() {
   const [fname, setFname] = useState("");
   const [fnameError, setFnameError] = useState(false);
