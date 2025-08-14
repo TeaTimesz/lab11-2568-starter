@@ -58,18 +58,19 @@ export default function ModalRegister() {
   // ----------------------------------------------------------------
 
   const computeTotalPayment = () => {
-    let total = 0;
-    if (plan === "funrun") total += 500;
-    if (plan === "mini") total += 800;
-    if (plan === "half") total += 1200;
-    if (plan === "full") total += 1500;
-    if (buyBottle) total += 200;
-    if (buyShoes) total += 600;
-    if (buyCap) total += 400;
+    let extrasprice = 0;
+    let planprice = 0;
+    if (plan === "funrun") planprice += 500;
+    if (plan === "mini") planprice += 800;
+    if (plan === "half") planprice += 1200;
+    if (plan === "full") planprice += 1500;
+    if (buyBottle) extrasprice += 200;
+    if (buyShoes) extrasprice += 600;
+    if (buyCap) extrasprice += 400;
     if (buyBottle && buyShoes && buyCap) {
-      total = (total * 80) / 100;
+      extrasprice = (extrasprice * 80) / 100;
     }
-    return total;
+    return planprice + extrasprice;
   };
 
   // ----------------------------------------------------------------
